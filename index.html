@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merengue Doceria | Mais doçura no seu dia</title>
+    <meta name="description" content="Bolos, doces, salgados e kits festa feitos para transformar um café comum, uma comemoração ou aquele desejo de última hora em um momento especial.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Merengue Doceria | Mais doçura no seu dia">
+    <meta property="og:description" content="Bolos, doces, salgados e kits festa premium. Onde a sua próxima doce memória começa.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF6B00',
+                            light: '#FF7A18',
+                            yellow: '#FFB21C',
+                            cream: '#FFF7ED',
+                            dark: '#241915',
+                            green: '#087443'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans text-brand-dark bg-brand-cream antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between shadow-sm border border-white/40 transition-all duration-300">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-orange text-white rounded-full flex items-center justify-center font-serif font-bold text-xl group-hover:scale-105 transition-transform">
+                    M
+                </div>
+                <span class="font-serif font-bold text-lg text-brand-orange hidden sm:block tracking-tight">Merengue</span>
+            </a>
+
+            <!-- Nav Desktop -->
+            <nav class="hidden md:flex items-center gap-10 font-medium text-sm text-brand-dark">
+                <a href="#produtos" class="hover:text-brand-orange transition-colors">Produtos</a>
+                <a href="#experiencia" class="hover:text-brand-orange transition-colors">Experiência</a>
+                <a href="#lojas" class="hover:text-brand-orange transition-colors">Lojas</a>
+            </nav>
+
+            <!-- CTA Desktop -->
+            <a href="https://wa.me/551125523166" target="_blank" class="hidden md:flex items-center gap-2 bg-brand-orange hover:bg-brand-light text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all hover:shadow-lg hover:shadow-brand-orange/30 transform hover:-translate-y-0.5">
+                Peça pelo WhatsApp
+                <i class="ph-fill ph-whatsapp text-lg"></i>
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-brand-dark hover:text-brand-orange transition-colors" id="mobile-menu-btn" aria-label="Abrir menu">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-br from-brand-orange to-brand-light text-white">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 bg-dots opacity-40 text-white mix-blend-overlay"></div>
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-light rounded-full blur-[100px] opacity-40 -translate-y-1/2 translate-x-1/3"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Text Content -->
+                <div class="lg:col-span-5 fade-in-up">
+                    <p class="text-xs sm:text-sm font-bold tracking-[0.2em] mb-6 text-brand-yellow uppercase">
+                        Duas lojas • Guaianases • Itaim Paulista
+                    </p>
+                    <h1 class="font-serif text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.95] mb-6">
+                        Mais<br>
+                        doçura no<br>
+                        seu dia.
+                    </h1>
+                    <p class="text-lg sm:text-xl font-light mb-10 text-white/90 leading-relaxed max-w-md">
+                        Bolos, doces, salgados e kits festa feitos para transformar um café comum, uma comemoração ou aquele desejo de última hora em um momento especial.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#produtos" class="bg-white text-brand-orange hover:bg-brand-cream px-8 py-4 rounded-full font-bold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center">
+                            Ver nossas delícias
+                        </a>
+                        <a href="https://wa.me/551125523166" target="_blank" class="border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-sm text-center">
+                            Falar com a loja
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Content -->
+                <div class="lg:col-span-7 relative flex justify-center lg:justify-end items-center fade-in-up" style="transition-delay: 200ms;">
+                    <div class="relative w-full max-w-lg lg:max-w-none lg:w-[110%] lg:h-[600px] mt-10 lg:mt-0">
+                         <!-- Main Cake Image -->
+                         <img src="img/cake_hero.jpg" alt="Bolo de morango com chantilly" class="w-full h-full object-cover rounded-[2rem] sm:rounded-[3rem] shadow-2xl z-10 relative border-8 border-white/10">
+                         
+                         <!-- Decorative Shape -->
+                         <div class="absolute -bottom-10 -left-10 w-64 h-64 rounded-full border border-white/20 z-0 animate-spin-slow hidden sm:block"></div>
+                         
+                         <!-- Small Slice Image -->
+                         <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fatia de bolo" class="absolute -bottom-8 -left-8 sm:-bottom-12 sm:-left-12 w-40 h-40 sm:w-56 sm:h-56 object-cover rounded-2xl sm:rounded-3xl shadow-2xl z-20 border-4 sm:border-8 border-white rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee / Ticker -->
+        <div class="bg-white py-5 overflow-hidden border-b border-brand-cream relative z-20 shadow-sm">
+            <div class="marquee-container flex whitespace-nowrap items-center text-brand-orange font-bold tracking-[0.15em] text-sm uppercase">
+                <div class="marquee-content animate-marquee flex items-center">
+                    <span class="mx-8">Doces</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Salgados</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Kit Festa</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Momentos Especiais</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Bolos</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Doces</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Salgados</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Kit Festa</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Momentos Especiais</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Bolos</span><span class="text-brand-light/40">✦</span>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-content animate-marquee flex items-center" aria-hidden="true">
+                    <span class="mx-8">Doces</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Salgados</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Kit Festa</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Momentos Especiais</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Bolos</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Doces</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Salgados</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Kit Festa</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Momentos Especiais</span><span class="text-brand-light/40">✦</span>
+                    <span class="mx-8">Bolos</span><span class="text-brand-light/40">✦</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Qual é a sua vontade? -->
+        <section id="produtos" class="py-24 sm:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Header Section -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in-up">
+                    <div class="max-w-2xl">
+                        <p class="text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">Um pouquinho de tudo que você ama</p>
+                        <h2 class="font-serif text-4xl sm:text-5xl text-brand-dark leading-tight">
+                            Qual é a sua vontade<br>de hoje?
+                        </h2>
+                    </div>
+                    <p class="text-gray-500 max-w-sm md:text-right text-sm leading-relaxed">
+                        Para uma pausa gostosa ou uma grande celebração. Encontre o seu próximo sabor favorito.
+                    </p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex overflow-x-auto pb-6 mb-8 gap-3 hide-scrollbar fade-in-up">
+                    <button class="px-6 py-2.5 rounded-full bg-brand-orange text-white text-sm font-semibold shrink-0 transition-transform hover:scale-105">Todos</button>
+                    <button class="px-6 py-2.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-orange/10 text-sm font-semibold shrink-0 transition-colors">Bolos</button>
+                    <button class="px-6 py-2.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-orange/10 text-sm font-semibold shrink-0 transition-colors">Doces</button>
+                    <button class="px-6 py-2.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-orange/10 text-sm font-semibold shrink-0 transition-colors">Salgados</button>
+                    <button class="px-6 py-2.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-orange/10 text-sm font-semibold shrink-0 transition-colors">Kit festa</button>
+                    <button class="px-6 py-2.5 rounded-full bg-brand-cream text-brand-dark hover:bg-brand-orange/10 text-sm font-semibold shrink-0 transition-colors">Encomendas</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+                    <!-- Card 1 -->
+                    <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 100ms;">
+                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                            <img src="img/cake_hero.jpg" alt="Bolos Premium" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Para compartilhar</div>
+                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Bolos</h3>
+                        <p class="text-gray-500 text-sm">Uma fatia de felicidade para cada momento.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 200ms;">
+                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                            <img src="img/docinhos.jpg" alt="Doces Artesanais" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Difícil escolher um só</div>
+                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Doces</h3>
+                        <p class="text-gray-500 text-sm">Pequenos quadrados, grandes sabores.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 300ms;">
+                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                            <img src="img/salgados.jpg" alt="Salgados" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Combinação perfeita</div>
+                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Salgados</h3>
+                        <p class="text-gray-500 text-sm">O lado salgado que todo mundo ama.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 400ms;">
+                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                            <img src="img/kit_festa.jpg" alt="Kit Festa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">A festa começa aqui</div>
+                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Kit Festa</h3>
+                        <p class="text-gray-500 text-sm">Tudo junto para celebrar do seu jeito.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Momentos Especiais -->
+        <section id="experiencia" class="py-24 sm:py-32 bg-gradient-to-br from-brand-orange to-brand-light text-white relative overflow-hidden">
+            <!-- Background pattern -->
+            <div class="absolute inset-0 bg-dots opacity-30 mix-blend-overlay"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    
+                    <!-- Image Layout -->
+                    <div class="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:h-[650px] fade-in-up group">
+                        <img src="img/cake_hero.jpg" alt="Mesa de festa com doces e salgados" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                        <p class="text-brand-yellow text-xs font-bold tracking-[0.2em] uppercase mb-4">Você comemora. A gente adoça.</p>
+                        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+                            Momentos especiais pedem <em class="font-serif italic font-normal text-white">Merengue.</em>
+                        </h2>
+                        <p class="text-lg text-white/90 mb-10 font-light leading-relaxed max-w-lg">
+                            Aniversário, encontro em família ou aquela surpresa para alguém querido. Vamos encontrar as delícias que combinam com a sua comemoração?
+                        </p>
+                        
+                        <ul class="space-y-5 mb-12">
+                            <li class="flex items-center gap-4">
+                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0 backdrop-blur-sm">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <span class="text-lg font-medium">Bolos para a sua ocasião</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0 backdrop-blur-sm">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <span class="text-lg font-medium">Doces e salgados para compartilhar</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white shrink-0 backdrop-blur-sm">
+                                    <i class="ph-bold ph-check text-sm"></i>
+                                </div>
+                                <span class="text-lg font-medium">Kit festa para reunir quem você ama</span>
+                            </li>
+                        </ul>
+
+                        <div>
+                            <a href="https://wa.me/551125523166" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-[#065c35] text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full sm:w-auto mb-4">
+                                <i class="ph-fill ph-whatsapp text-xl"></i>
+                                Vamos planejar sua encomenda
+                            </a>
+                            <p class="text-sm text-white/70 font-light text-center sm:text-left">Consulte opções, quantidades e prazos pelo WhatsApp.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Lojas -->
+        <section id="lojas" class="py-24 sm:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 fade-in-up">
+                    <div>
+                        <p class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-4">Pertinho de você</p>
+                        <h2 class="font-serif text-4xl sm:text-5xl text-brand-dark">Duas lojas. A mesma doçura.</h2>
+                    </div>
+                    <p class="text-gray-500 max-w-xs md:text-right text-sm">
+                        Escolha sua unidade e venha fazer<br>uma pausa com a gente.
+                    </p>
+                </div>
+
+                <!-- Cards -->
+                <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                    
+                    <!-- Loja 01 -->
+                    <div class="group rounded-[2rem] border border-gray-100 p-4 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-6">
+                        <div class="rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square sm:w-2/5 shrink-0">
+                            <img src="img/merengue-loja1-corrected.jpg" alt="Loja Itaim Paulista" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex flex-col justify-center sm:w-3/5 py-2">
+                            <p class="text-brand-orange text-[10px] tracking-widest font-bold uppercase mb-2">Loja 01</p>
+                            <h3 class="font-serif text-2xl font-bold mb-4">Itaim Paulista</h3>
+                            <div class="flex items-start gap-3 text-gray-600 mb-8 text-sm leading-relaxed">
+                                <i class="ph-fill ph-map-pin text-brand-orange text-lg shrink-0 mt-0.5"></i>
+                                <p>Rua Exemplo do Itaim, 123<br>Itaim Paulista, São Paulo - SP</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-auto">
+                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-3 rounded-full font-bold transition-all text-sm">
+                                    Como chegar
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
+                                    <i class="ph-bold ph-instagram-logo text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Loja 02 -->
+                    <div class="group rounded-[2rem] border border-gray-100 p-4 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-6" style="transition-delay: 200ms;">
+                        <div class="rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square sm:w-2/5 shrink-0">
+                            <img src="img/merengue-loja2-corrected.jpg" alt="Loja Guaianases" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="flex flex-col justify-center sm:w-3/5 py-2">
+                            <p class="text-brand-orange text-[10px] tracking-widest font-bold uppercase mb-2">Loja 02</p>
+                            <h3 class="font-serif text-2xl font-bold mb-4">Guaianases</h3>
+                            <div class="flex items-start gap-3 text-gray-600 mb-8 text-sm leading-relaxed">
+                                <i class="ph-fill ph-map-pin text-brand-orange text-lg shrink-0 mt-0.5"></i>
+                                <p>Avenida de Guaianases, 456<br>Guaianases, São Paulo - SP</p>
+                            </div>
+                            <div class="flex items-center gap-3 mt-auto">
+                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-3 rounded-full font-bold transition-all text-sm">
+                                    Como chegar
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
+                                    <i class="ph-bold ph-instagram-logo text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Info Horários -->
+                <div class="bg-brand-cream border border-brand-orange/10 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 fade-in-up">
+                    <div class="flex items-center gap-5 w-full md:w-auto">
+                        <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-sm shrink-0">
+                            <i class="ph-fill ph-clock text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-brand-dark mb-1">Tem sempre uma hora para adoçar o dia</h4>
+                            <p class="text-sm text-gray-600">Segunda a sábado: 09h às 20h • Domingo e feriados: 09h às 14h</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-6 text-sm font-bold text-brand-dark w-full md:w-auto md:text-right border-t md:border-t-0 md:border-l border-brand-orange/10 pt-6 md:pt-0 md:pl-8">
+                        <div class="flex items-center md:justify-end gap-3 hover:text-brand-orange transition-colors cursor-pointer">
+                            <i class="ph-fill ph-whatsapp text-brand-orange text-xl"></i>
+                            <span>(11) 2552-3166</span>
+                        </div>
+                        <div class="flex items-center md:justify-end gap-3 hover:text-brand-orange transition-colors cursor-pointer">
+                            <i class="ph-fill ph-phone text-brand-orange text-xl"></i>
+                            <span>(11) 2553-9065</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 sm:py-32 bg-gradient-to-br from-brand-orange to-brand-light text-white text-center relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 bg-dots opacity-30 mix-blend-overlay"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-brand-light blur-[120px] rounded-full opacity-60"></div>
+
+            <div class="max-w-3xl mx-auto px-6 relative z-10 fade-in-up">
+                <p class="text-brand-yellow text-xs font-bold tracking-[0.2em] uppercase mb-6">A próxima doce memória começa aqui</p>
+                <h2 class="font-serif text-5xl sm:text-6xl lg:text-7xl mb-12 leading-tight">
+                    Deu vontade?<br>
+                    <span class="italic font-normal">A gente entende.</span>
+                </h2>
+                <a href="https://wa.me/551125523166" target="_blank" class="inline-flex items-center justify-center bg-white text-brand-orange hover:bg-brand-cream px-10 py-5 rounded-full font-bold transition-all shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.2)] transform hover:-translate-y-1 text-lg">
+                    Fale com a Merengue
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8 border-b border-white/10 pb-12">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl group-hover:scale-105 transition-transform">
+                        M
+                    </div>
+                    <span class="font-serif font-bold text-2xl tracking-tight">Merengue</span>
+                </a>
+
+                <!-- Links -->
+                <nav class="flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-300">
+                    <a href="#produtos" class="hover:text-brand-orange transition-colors">Produtos</a>
+                    <a href="#experiencia" class="hover:text-brand-orange transition-colors">Experiência</a>
+                    <a href="#lojas" class="hover:text-brand-orange transition-colors">Lojas</a>
+                    <a href="https://wa.me/551125523166" target="_blank" class="hover:text-brand-orange transition-colors">WhatsApp</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+                <p>&copy; 2026 Merengue Doceria. Todos os direitos reservados.</p>
+                <a href="#" class="hover:text-white transition-colors flex items-center gap-1.5 uppercase tracking-wider font-bold">
+                    Voltar ao topo <i class="ph-bold ph-arrow-up text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/551125523166" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-[#20bd5a] hover:shadow-[#25D366]/30 transition-all z-50 group">
+        <i class="ph ph-whatsapp-logo text-3xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-4 bg-white text-brand-dark text-xs font-bold py-2 px-3 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap hidden sm:block">
+            Faça seu pedido!
+        </span>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
