@@ -2,6 +2,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Initialize Lenis Smooth Scroll
+    if (typeof Lenis !== 'undefined') {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+
+        // Link anchor clicks to Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    lenis.scrollTo(0);
+                    return;
+                }
+                const target = document.querySelector(targetId);
+                if (target) {
+                    lenis.scrollTo(target);
+                }
+            });
+        });
+    }
+    
     // Header Scroll Effect
     const header = document.getElementById('header');
     const headerInner = header.querySelector('div');
@@ -43,31 +81,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-in-up');
     fadeElements.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle (Basic implementation to show intent)
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    if(mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            alert('Menu mobile click - Expandir menu lateral');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    const openMobileMenu = () => {
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+
+    const closeMobileMenu = () => {
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+    };
+
+    if(mobileMenuBtn && mobileMenu && closeMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 
-    // Smooth Scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                return;
-            }
-            const target = document.querySelector(targetId);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
 });
-

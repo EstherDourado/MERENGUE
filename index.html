@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth scroll-pt-24">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,9 @@
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Lenis (Smooth Scroll) -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
@@ -54,10 +57,8 @@
         <div class="max-w-7xl mx-auto bg-white/95 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between shadow-sm border border-white/40 transition-all duration-300">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
-                <div class="w-10 h-10 bg-brand-orange text-white rounded-full flex items-center justify-center font-serif font-bold text-xl group-hover:scale-105 transition-transform">
-                    M
-                </div>
-                <span class="font-serif font-bold text-lg text-brand-orange hidden sm:block tracking-tight">Merengue</span>
+                <img src="img/Logo_meregue.jpg" alt="Logo Merengue" class="h-10 w-10 object-cover rounded-full group-hover:scale-105 transition-transform shadow-sm">
+                <!-- <span class="font-serif font-bold text-lg text-brand-orange hidden sm:block tracking-tight">Merengue</span> -->
             </a>
 
             <!-- Nav Desktop -->
@@ -80,33 +81,45 @@
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-md z-[60] flex flex-col justify-center items-center gap-8 opacity-0 pointer-events-none transition-opacity duration-300">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-white hover:text-brand-orange transition-colors" aria-label="Fechar menu">
+            <i class="ph ph-x text-3xl"></i>
+        </button>
+        <nav class="flex flex-col items-center gap-8 font-serif text-3xl text-white">
+            <a href="#produtos" class="mobile-link hover:text-brand-orange transition-colors">Produtos</a>
+            <a href="#experiencia" class="mobile-link hover:text-brand-orange transition-colors">Experiência</a>
+            <a href="#lojas" class="mobile-link hover:text-brand-orange transition-colors">Lojas</a>
+        </nav>
+        <a href="https://wa.me/551125523166" target="_blank" class="mt-4 flex items-center gap-2 bg-brand-orange text-white px-8 py-3 rounded-full font-bold text-lg transition-all shadow-lg hover:-translate-y-1">
+            Peça pelo WhatsApp
+            <i class="ph-fill ph-whatsapp-logo text-xl"></i>
+        </a>
+    </div>
+
     <main>
         <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-to-br from-brand-orange to-brand-light text-white">
-            <!-- Background Elements -->
-            <div class="absolute inset-0 bg-dots opacity-40 text-white mix-blend-overlay"></div>
-            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-light rounded-full blur-[100px] opacity-40 -translate-y-1/2 translate-x-1/3"></div>
-            
-            <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+        <section class="relative pt-24 pb-12 lg:pt-44 lg:pb-32 overflow-hidden bg-mesh-confeitaria text-white">
+            <div class="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
                 <!-- Text Content -->
                 <div class="lg:col-span-5 fade-in-up">
-                    <p class="text-xs sm:text-sm font-bold tracking-[0.2em] mb-6 text-brand-yellow uppercase">
+                    <p class="inline-block text-[10px] sm:text-sm font-bold tracking-[0.2em] mb-4 text-brand-white uppercase bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
                         Duas lojas • Guaianases • Itaim Paulista
                     </p>
-                    <h1 class="font-serif text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.95] mb-6">
+                    <h1 class="font-serif text-5xl sm:text-7xl lg:text-[5.5rem] leading-[0.95] mb-4 sm:mb-6">
                         Mais<br>
                         doçura no<br>
                         seu dia.
                     </h1>
-                    <p class="text-lg sm:text-xl font-light mb-10 text-white/90 leading-relaxed max-w-md">
+                    <p class="text-base sm:text-xl font-light mb-6 sm:mb-10 text-white/90 leading-relaxed max-w-md">
                         Bolos, doces, salgados e kits festa feitos para transformar um café comum, uma comemoração ou aquele desejo de última hora em um momento especial.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#produtos" class="bg-white text-brand-orange hover:bg-brand-cream px-8 py-4 rounded-full font-bold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center">
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <a href="#produtos" class="bg-white text-brand-orange hover:bg-brand-cream px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 text-center text-sm sm:text-base">
                             Ver nossas delícias
                         </a>
-                        <a href="https://wa.me/551125523166" target="_blank" class="border border-white/40 hover:bg-white/10 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-sm text-center">
+                        <a href="https://wa.me/551125523166" target="_blank" class="border border-white/40 hover:bg-white/10 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold transition-all backdrop-blur-sm text-center text-sm sm:text-base">
                             Falar com a loja
                         </a>
                     </div>
@@ -114,15 +127,15 @@
 
                 <!-- Image Content -->
                 <div class="lg:col-span-7 relative flex justify-center lg:justify-end items-center fade-in-up" style="transition-delay: 200ms;">
-                    <div class="relative w-full max-w-lg lg:max-w-none lg:w-[110%] lg:h-[600px] mt-10 lg:mt-0">
+                    <div class="relative w-full max-w-xs sm:max-w-lg lg:max-w-none lg:w-[110%] lg:h-[600px] mt-6 lg:mt-0 aspect-[4/3] lg:aspect-auto">
                          <!-- Main Cake Image -->
-                         <img src="img/cake_hero.jpg" alt="Bolo de morango com chantilly" class="w-full h-full object-cover rounded-[2rem] sm:rounded-[3rem] shadow-2xl z-10 relative border-8 border-white/10">
+                         <img src="img/cake_hero.jpg" alt="Bolo de morango com chantilly" class="w-full h-full object-cover rounded-2xl sm:rounded-[3rem] shadow-2xl z-10 relative border-4 sm:border-8 border-white/10">
                          
                          <!-- Decorative Shape -->
                          <div class="absolute -bottom-10 -left-10 w-64 h-64 rounded-full border border-white/20 z-0 animate-spin-slow hidden sm:block"></div>
                          
                          <!-- Small Slice Image -->
-                         <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fatia de bolo" class="absolute -bottom-8 -left-8 sm:-bottom-12 sm:-left-12 w-40 h-40 sm:w-56 sm:h-56 object-cover rounded-2xl sm:rounded-3xl shadow-2xl z-20 border-4 sm:border-8 border-white rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
+                         <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fatia de bolo" class="absolute -bottom-6 -left-4 sm:-bottom-12 sm:-left-12 w-28 h-28 sm:w-56 sm:h-56 object-cover rounded-xl sm:rounded-3xl shadow-2xl z-20 border-2 sm:border-8 border-white rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
                     </div>
                 </div>
             </div>
@@ -186,72 +199,69 @@
                 </div>
 
                 <!-- Products Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-8 sm:gap-y-12">
                     <!-- Card 1 -->
                     <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 100ms;">
-                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                        <div class="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[4/5] mb-3 sm:mb-5">
                             <img src="img/cake_hero.jpg" alt="Bolos Premium" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Para compartilhar</div>
-                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur px-2 sm:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] uppercase font-bold text-brand-dark tracking-wider">Para compartilhar</div>
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-sm sm:text-xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Bolos</h3>
-                        <p class="text-gray-500 text-sm">Uma fatia de felicidade para cada momento.</p>
+                        <h3 class="font-serif text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-brand-orange transition-colors">Bolos</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm">Uma fatia de felicidade para cada momento.</p>
                     </div>
 
                     <!-- Card 2 -->
                     <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 200ms;">
-                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                        <div class="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[4/5] mb-3 sm:mb-5">
                             <img src="img/docinhos.jpg" alt="Doces Artesanais" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Difícil escolher um só</div>
-                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur px-2 sm:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] uppercase font-bold text-brand-dark tracking-wider">Difícil escolher</div>
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-sm sm:text-xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Doces</h3>
-                        <p class="text-gray-500 text-sm">Pequenos quadrados, grandes sabores.</p>
+                        <h3 class="font-serif text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-brand-orange transition-colors">Doces</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm">Pequenos quadrados, grandes sabores.</p>
                     </div>
 
                     <!-- Card 3 -->
                     <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 300ms;">
-                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                        <div class="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[4/5] mb-3 sm:mb-5">
                             <img src="img/salgados.jpg" alt="Salgados" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">Combinação perfeita</div>
-                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur px-2 sm:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] uppercase font-bold text-brand-dark tracking-wider">Combinação perfeita</div>
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-sm sm:text-xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Salgados</h3>
-                        <p class="text-gray-500 text-sm">O lado salgado que todo mundo ama.</p>
+                        <h3 class="font-serif text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-brand-orange transition-colors">Salgados</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm">O lado salgado que todo mundo ama.</p>
                     </div>
 
                     <!-- Card 4 -->
                     <div class="group cursor-pointer product-card fade-in-up" style="transition-delay: 400ms;">
-                        <div class="relative overflow-hidden rounded-[2rem] aspect-[4/5] mb-5">
+                        <div class="relative overflow-hidden rounded-2xl sm:rounded-[2rem] aspect-[4/5] mb-3 sm:mb-5">
                             <img src="img/kit_festa.jpg" alt="Kit Festa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur px-4 py-1.5 rounded-full text-[10px] uppercase font-bold text-brand-dark tracking-wider">A festa começa aqui</div>
-                            <div class="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                <i class="ph-bold ph-arrow-up-right text-xl"></i>
+                            <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur px-2 sm:px-4 py-1 sm:py-1.5 rounded-full text-[8px] sm:text-[10px] uppercase font-bold text-brand-dark tracking-wider">A festa começa aqui</div>
+                            <div class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center text-brand-orange shadow-[0_8px_30px_rgb(0,0,0,0.12)] transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <i class="ph-bold ph-arrow-up-right text-sm sm:text-xl"></i>
                             </div>
                         </div>
-                        <h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-brand-orange transition-colors">Kit Festa</h3>
-                        <p class="text-gray-500 text-sm">Tudo junto para celebrar do seu jeito.</p>
+                        <h3 class="font-serif text-lg sm:text-2xl font-bold mb-1 sm:mb-2 group-hover:text-brand-orange transition-colors">Kit Festa</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm">Tudo junto para celebrar do seu jeito.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Section: Momentos Especiais -->
-        <section id="experiencia" class="py-24 sm:py-32 bg-gradient-to-br from-brand-orange to-brand-light text-white relative overflow-hidden">
-            <!-- Background pattern -->
-            <div class="absolute inset-0 bg-dots opacity-30 mix-blend-overlay"></div>
-            
+        <section id="experiencia" class="py-24 sm:py-32 bg-mesh-confeitaria text-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 relative z-10">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     
                     <!-- Image Layout -->
-                    <div class="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:h-[650px] fade-in-up group">
+                    <div class="relative rounded-2xl sm:rounded-[3rem] overflow-hidden shadow-2xl aspect-video sm:aspect-[4/3] lg:aspect-auto lg:h-[650px] fade-in-up group">
                         <img src="img/cake_hero.jpg" alt="Mesa de festa com doces e salgados" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
@@ -316,49 +326,49 @@
                 </div>
 
                 <!-- Cards -->
-                <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <div class="grid grid-cols-2 gap-3 sm:gap-8 mb-16">
                     
                     <!-- Loja 01 -->
-                    <div class="group rounded-[2rem] border border-gray-100 p-4 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-6">
-                        <div class="rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square sm:w-2/5 shrink-0">
+                    <div class="group rounded-2xl sm:rounded-[2rem] border border-gray-100 p-3 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-3 sm:gap-6">
+                        <div class="rounded-xl sm:rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square sm:w-2/5 shrink-0">
                             <img src="img/merengue-loja1-corrected.jpg" alt="Loja Itaim Paulista" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
-                        <div class="flex flex-col justify-center sm:w-3/5 py-2">
-                            <p class="text-brand-orange text-[10px] tracking-widest font-bold uppercase mb-2">Loja 01</p>
-                            <h3 class="font-serif text-2xl font-bold mb-4">Itaim Paulista</h3>
-                            <div class="flex items-start gap-3 text-gray-600 mb-8 text-sm leading-relaxed">
-                                <i class="ph-fill ph-map-pin text-brand-orange text-lg shrink-0 mt-0.5"></i>
-                                <p>Rua Exemplo do Itaim, 123<br>Itaim Paulista, São Paulo - SP</p>
+                        <div class="flex flex-col justify-center sm:w-3/5 py-1 sm:py-2">
+                            <p class="text-brand-orange text-[8px] sm:text-[10px] tracking-widest font-bold uppercase mb-1 sm:mb-2">Loja 01</p>
+                            <h3 class="font-serif text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Itaim Paulista</h3>
+                            <div class="flex items-start gap-1 sm:gap-3 text-gray-600 mb-3 sm:mb-8 text-[10px] sm:text-sm leading-relaxed">
+                                <i class="ph-fill ph-map-pin text-brand-orange text-sm sm:text-lg shrink-0 mt-0.5"></i>
+                                <p>Rua Exemplo do Itaim, 123<br>São Paulo - SP</p>
                             </div>
-                            <div class="flex items-center gap-3 mt-auto">
-                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-3 rounded-full font-bold transition-all text-sm">
-                                    Como chegar
+                            <div class="flex items-center gap-2 sm:gap-3 mt-auto">
+                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-1.5 sm:py-3 rounded-full font-bold transition-all text-[10px] sm:text-sm">
+                                    Rota
                                 </a>
-                                <a href="#" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
-                                    <i class="ph-bold ph-instagram-logo text-xl"></i>
+                                <a href="#" class="w-8 h-8 sm:w-12 sm:h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
+                                    <i class="ph-bold ph-instagram-logo text-sm sm:text-xl"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <!-- Loja 02 -->
-                    <div class="group rounded-[2rem] border border-gray-100 p-4 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-6" style="transition-delay: 200ms;">
+                    <div class="group rounded-[2rem] border border-gray-100 p-3 sm:p-6 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] transition-all duration-500 bg-white fade-in-up flex flex-col sm:flex-row gap-3 sm:gap-6" style="transition-delay: 200ms;">
                         <div class="rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-square sm:w-2/5 shrink-0">
                             <img src="img/merengue-loja2-corrected.jpg" alt="Loja Guaianases" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         </div>
-                        <div class="flex flex-col justify-center sm:w-3/5 py-2">
-                            <p class="text-brand-orange text-[10px] tracking-widest font-bold uppercase mb-2">Loja 02</p>
-                            <h3 class="font-serif text-2xl font-bold mb-4">Guaianases</h3>
-                            <div class="flex items-start gap-3 text-gray-600 mb-8 text-sm leading-relaxed">
-                                <i class="ph-fill ph-map-pin text-brand-orange text-lg shrink-0 mt-0.5"></i>
+                        <div class="flex flex-col justify-center sm:w-3/5 py-1 sm:py-2">
+                            <p class="text-brand-orange text-[8px] sm:text-[10px] tracking-widest font-bold uppercase mb-1 sm:mb-2">Loja 02</p>
+                            <h3 class="font-serif text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Guaianases</h3>
+                            <div class="flex items-start gap-1.5 sm:gap-3 text-gray-600 mb-4 sm:mb-8 text-[10px] sm:text-sm leading-relaxed">
+                                <i class="ph-fill ph-map-pin text-brand-orange text-sm sm:text-lg shrink-0 mt-0.5"></i>
                                 <p>Avenida de Guaianases, 456<br>Guaianases, São Paulo - SP</p>
                             </div>
-                            <div class="flex items-center gap-3 mt-auto">
-                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-3 rounded-full font-bold transition-all text-sm">
-                                    Como chegar
+                            <div class="flex items-center gap-2 sm:gap-3 mt-auto">
+                                <a href="#" class="flex-1 text-center border border-gray-200 hover:border-brand-orange hover:bg-brand-orange hover:text-white text-brand-dark py-1.5 sm:py-3 rounded-full font-bold transition-all text-[10px] sm:text-sm">
+                                    Rota
                                 </a>
-                                <a href="#" class="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
-                                    <i class="ph-bold ph-instagram-logo text-xl"></i>
+                                <a href="#" class="w-8 h-8 sm:w-12 sm:h-12 rounded-full border border-gray-200 flex items-center justify-center text-brand-dark hover:border-brand-orange hover:text-brand-orange transition-colors shrink-0">
+                                    <i class="ph-bold ph-instagram-logo text-sm sm:text-xl"></i>
                                 </a>
                             </div>
                         </div>
@@ -393,11 +403,7 @@
         </section>
 
         <!-- Final CTA -->
-        <section class="py-24 sm:py-32 bg-gradient-to-br from-brand-orange to-brand-light text-white text-center relative overflow-hidden">
-            <!-- Background Elements -->
-            <div class="absolute inset-0 bg-dots opacity-30 mix-blend-overlay"></div>
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-64 bg-brand-light blur-[120px] rounded-full opacity-60"></div>
-
+        <section class="py-24 sm:py-32 bg-mesh-confeitaria text-white text-center relative overflow-hidden">
             <div class="max-w-3xl mx-auto px-6 relative z-10 fade-in-up">
                 <p class="text-brand-yellow text-xs font-bold tracking-[0.2em] uppercase mb-6">A próxima doce memória começa aqui</p>
                 <h2 class="font-serif text-5xl sm:text-6xl lg:text-7xl mb-12 leading-tight">
@@ -418,10 +424,8 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-8 border-b border-white/10 pb-12">
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center font-serif font-bold text-2xl group-hover:scale-105 transition-transform">
-                        M
-                    </div>
-                    <span class="font-serif font-bold text-2xl tracking-tight">Merengue</span>
+                    <img src="img/Logo_meregue.jpg" alt="Logo Merengue" class="h-12 w-12 object-cover rounded-full group-hover:scale-105 transition-transform shadow-lg">
+                    <!-- <span class="font-serif font-bold text-2xl tracking-tight">Merengue</span> -->
                 </a>
 
                 <!-- Links -->
