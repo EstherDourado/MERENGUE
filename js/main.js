@@ -2,43 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Initialize Lenis Smooth Scroll
-    if (typeof Lenis !== 'undefined') {
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-            direction: 'vertical',
-            gestureDirection: 'vertical',
-            smooth: true,
-            mouseMultiplier: 1,
-            smoothTouch: false,
-            touchMultiplier: 2,
-            infinite: false,
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-
-        // Link anchor clicks to Lenis
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') {
-                    lenis.scrollTo(0);
-                    return;
-                }
-                const target = document.querySelector(targetId);
-                if (target) {
-                    lenis.scrollTo(target);
-                }
-            });
-        });
-    }
+    // Rolagem nativa suave está sendo tratada pelo Tailwind (scroll-smooth) na tag <html>
     
     // Header Scroll Effect
     const header = document.getElementById('header');
